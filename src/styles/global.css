@@ -916,6 +916,7 @@ button {
     background: #efede8;
     padding: 56px 36px;
     text-align: center;
+    overflow: hidden;
 }
 .stat-cell__num {
     font-size: clamp(48px, 5vw, 72px);
@@ -1139,6 +1140,12 @@ button {
     }
     .stats-grid {
         grid-template-columns: 1fr 1fr;
+    }
+    .stat-cell {
+        padding: 40px 16px;
+    }
+    .stat-cell__num {
+        font-size: clamp(36px, 10vw, 48px);
     }
     .page-hero {
         padding: 110px 0 60px;
