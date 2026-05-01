@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Wix to Shopify Migration | Novelty Ads"
+  description="Migrate from Wix to Shopify with Novelty Ads. Full site migration — design, content, products, and SEO — zero data loss, zero downtime."
+  canonical="https://noveltyads.com/wix-to-shopify/"
+>
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">Migration Service</p>
+    <h1 class="page-hero__title" data-reveal="up">Wix → Shopify<br>Migration.</h1>
+    <p class="page-hero__sub" data-reveal="up">Outgrown Wix? We migrate your full store to Shopify — products, pages, customers, SEO redirects — all done without any downtime or data loss.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="up">
+      <a href="/contact" class="btn btn-yellow btn-lg">Start Migration</a>
+    </div>
+  </div>
+</section>
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <h2 class="section-title title-dark" data-reveal="up">What's included in<br>your Wix → Shopify migration?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" data-stagger>
+      {[
+        { icon: '📦', color: '#3A5BF0', tc: '#fff', title: 'Full Product Migration', desc: 'All products, variants, images, descriptions, and pricing migrated with complete accuracy.' },
+        { icon: '🔗', color: '#FF6B35', tc: '#fff', title: 'SEO Redirect Map', desc: 'Every URL gets a 301 redirect so you keep your Google rankings. No traffic lost in transition.' },
+        { icon: '🎨', color: '#F5E642', tc: '#0A0A0A', title: 'Custom Shopify Theme', desc: 'A beautiful, fast, mobile-first Shopify theme that matches or improves your existing brand design.' },
+      ].map(s => (
+        <div class="svc-card" style={`background:${s.color};color:${s.tc};`}>
+          <div class="svc-card__icon" style={s.tc === '#0A0A0A' ? 'background:rgba(0,0,0,0.1)' : ''}>{s.icon}</div>
+          <h3 class="svc-card__title">{s.title}</h3>
+          <p class="svc-card__desc">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<section style="padding:100px 0 120px;background:#F8F7F4;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <h2 class="cta-title">Time to upgrade<br>from Wix to Shopify.</h2>
+      <p class="cta-sub">Book a free consultation and get a migration plan within 24 hours.</p>
+      <div class="cta-actions"><a href="/contact" class="btn btn-yellow btn-xl">Get Free Migration Quote →</a></div>
+    </div>
+  </div>
+</section>
+</Layout>
+<style>@media(max-width:768px){div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}}</style>

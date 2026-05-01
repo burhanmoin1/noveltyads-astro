@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+const {
+  title,
+  description,
+  canonical = Astro.url.href,
+  ogImage = 'https://noveltyads.com/wp-content/uploads/2024/04/Cream-Simple-SEO-Writer-Course-Blog-Banner-700-%C3%97-700-px-1-1.svg',
+  noindex = false,
+} = Astro.props;
+
+const siteName = 'Novelty Ads';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+---
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex,nofollow" />}
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Schema.org: Organization -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MarketingAgency",
+  "name": "Novelty Ads",
+  "url": "https://noveltyads.com",
+  "logo": "https://noveltyads.com/wp-content/uploads/2024/04/Cream-Simple-SEO-Writer-Course-Blog-Banner-700-%C3%97-700-px-1-1.svg",
+  "description": "Full-stack digital marketing agency founded in Delaware, USA. Web design, SEO, paid ads, Kickstarter, Shopify and more.",
+  "address": [
+    { "@type": "PostalAddress", "addressCountry": "US", "addressRegion": "Delaware" },
+    { "@type": "PostalAddress", "addressCountry": "AE", "addressLocality": "Dubai" }
+  ],
+  "telephone": "+19292421923",
+  "email": "hello@noveltyads.com",
+  "sameAs": [
+    "https://www.facebook.com/noveltyadsagency",
+    "https://www.instagram.com/novelty_ads/",
+    "https://www.linkedin.com/company/noveltyads"
+  ]
+}
+</script>
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="https://noveltyads.com/wp-content/uploads/2024/04/Cream-Simple-SEO-Writer-Course-Blog-Banner-700-%C3%97-700-px-1-1.svg" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />

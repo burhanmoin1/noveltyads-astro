@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="About Us | Novelty Ads"
+  description="Meet the team behind Novelty Ads. Founded in 2022, we're a worldwide digital marketing agency helping SMBs grow through results-driven, end-to-end marketing strategies."
+  canonical="https://noveltyads.com/about-us/"
+>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">About Novelty Ads</p>
+    <h1 class="page-hero__title" data-reveal="up">Just Another Ad Agency?<br>Far from it.</h1>
+    <p class="page-hero__sub" data-reveal="up">Before launching Novelty Ads in 2022, our founder worked as a freelancer with SMBs, VC-backed startups, and Web3 projects as a marketing and paid media specialist.</p>
+  </div>
+</section>
+
+<!-- Story -->
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;">
+      <div data-reveal="up">
+        <p class="section-eyebrow eyebrow-dark" style="margin-bottom:18px;">Our Story</p>
+        <h2 class="section-title title-dark" style="margin-bottom:24px;">Built to help businesses grow — not just spend.</h2>
+        <p style="font-size:17px;line-height:1.75;color:#6B6B6B;margin-bottom:20px;">At Novelty Ads, we work with SMBs to help them grow their companies through end-to-end digital marketing strategies. Our goal is to help businesses grow by providing them with results-driven marketing strategies at an affordable price point.</p>
+        <p style="font-size:17px;line-height:1.75;color:#6B6B6B;margin-bottom:36px;">So they can focus on what they do best — running their business.</p>
+        <a href="/contact" class="btn btn-dark btn-lg">Work With Us →</a>
+      </div>
+      <div data-reveal="right">
+        <div style="background:#0A0A0A;border-radius:22px;padding:56px 44px;">
+          {[
+            { label: 'Founded', val: '2022', color: '#F5E642' },
+            { label: 'Headquartered', val: 'Delaware, USA', color: '#05C870' },
+            { label: 'Global Offices', val: 'UAE · AU · PK', color: '#3A5BF0' },
+            { label: 'Team', val: 'Remote Worldwide', color: '#9B5DE5' },
+          ].map(i => (
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.08);">
+              <span style="font-size:14px;color:rgba(255,255,255,0.45);font-weight:500;">{i.label}</span>
+              <span style={`font-size:16px;font-weight:700;color:${i.color};`}>{i.val}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section style="padding:120px 0;background:#EFEDE8;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="section-eyebrow eyebrow-dark" data-reveal="up">By The Numbers</p>
+      <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">The proof is in<br>the performance.</h2>
+    </div>
+    <div class="stats-grid" data-reveal="scale">
+      <div class="stat-cell"><div class="stat-cell__num">1M+</div><div class="stat-cell__label">Website Visitors Generated</div></div>
+      <div class="stat-cell"><div class="stat-cell__num">10+</div><div class="stat-cell__label">Years Combined Experience</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="40" data-suffix="+">40+</span></div><div class="stat-cell__label">Clients Served Worldwide</div></div>
+      <div class="stat-cell"><div class="stat-cell__num">$1M+</div><div class="stat-cell__label">Ad Spend Managed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="section-eyebrow eyebrow-dark" data-reveal="up">Our Team</p>
+      <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">Worldwide digital marketing experts<br>working remotely for your success.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" data-stagger>
+      {[
+        { name: 'Usama', role: 'Founder & CEO', init: 'U', color: '#F5E642', tc: '#0A0A0A', bio: 'Paid media specialist with extensive experience in SMB growth, VC-backed startups, and Web3 projects.' },
+        { name: 'Marketing Team', role: 'Paid Ads & SEO', init: 'M', color: '#3A5BF0', tc: '#fff', bio: 'Expert strategists running campaigns across Google, Meta, and TikTok — optimising for ROAS, not vanity metrics.' },
+        { name: 'Dev Team', role: 'Web & Shopify', init: 'D', color: '#05C870', tc: '#0A0A0A', bio: 'Certified developers building fast, beautiful, conversion-optimised websites and Shopify storefronts.' },
+      ].map(t => (
+        <div class="svc-card" style={`background:${t.color};color:${t.tc};`}>
+          <div style={`width:60px;height:60px;border-radius:50%;background:${t.tc === '#0A0A0A' ? 'rgba(0,0,0,0.15)' : 'rgba(255,255,255,0.2)'};display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;margin-bottom:20px;`}>{t.init}</div>
+          <h3 class="svc-card__title">{t.name}</h3>
+          <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;opacity:0.65;margin-bottom:12px;">{t.role}</div>
+          <p class="svc-card__desc">{t.bio}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section style="padding:120px 0;background:#0A0A0A;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="section-eyebrow eyebrow-light" data-reveal="up">Client Testimonials</p>
+      <h2 class="section-title title-light" style="margin-top:14px;" data-reveal="up">Ready for world class<br>marketing?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;" data-stagger>
+      <div class="testi-card testi-yellow">
+        <div class="testi-card__stars">★★★★★</div>
+        <p class="testi-card__quote">"Dedicated is the phrase that comes to mind. Usama's ability to turn limited resources into effective marketing content that heavily impacted our metrics was truly impressive."</p>
+        <div class="testi-card__author"><div class="testi-avatar">J</div><div><div class="testi-name">Jenna Schuchardt</div><div class="testi-role">Marketing Director</div></div></div>
+      </div>
+      <div class="testi-card testi-blue">
+        <div class="testi-card__stars">★★★★★</div>
+        <p class="testi-card__quote">"Usama and his team are extremely cutting edge and professional. They truly understand digital marketing at the deepest level and delivered beyond expectations."</p>
+        <div class="testi-card__author"><div class="testi-avatar">S</div><div><div class="testi-name">Scott Blaise</div><div class="testi-role">Startup CEO</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0 120px;background:#F8F7F4;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Let's Work Together</p>
+      <h2 class="cta-title">Interested in hiring us<br>for your next project?</h2>
+      <p class="cta-sub">Don't hesitate to reach out. We'd love to learn about your business and goals.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-yellow btn-xl">Get In Touch →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+<style>
+  @media (max-width:768px) {
+    div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>

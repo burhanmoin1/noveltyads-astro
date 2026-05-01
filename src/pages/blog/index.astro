@@ -1,0 +1,109 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const posts = [
+  {
+    slug: 'why-do-most-kickstarter-campaigns-fail',
+    title: 'Why Do Most Kickstarter Campaigns Fail?',
+    date: 'Mar 30, 2024',
+    author: 'Usama',
+    tag: 'Crowdfunding',
+    excerpt: 'Before diving into the article, first let me explain what Kickstarter is. Kickstarter is a funding platform for creative projects — from films and games to music, design, and technology. But why do so many campaigns fail?',
+    color: '#FF6B35',
+    tc: '#fff',
+  },
+  {
+    slug: 'kickstarter-marketing-strategies-2024',
+    title: 'Complete Guide: Kickstarter Marketing Strategies in 2024',
+    date: 'Feb 4, 2024',
+    author: 'Usama',
+    tag: 'Crowdfunding',
+    excerpt: 'Kickstarter is a crowdfunding platform that allows individuals or businesses to raise funds for creative projects through the support of numerous people. Here\'s the complete marketing playbook.',
+    color: '#3A5BF0',
+    tc: '#fff',
+  },
+  {
+    slug: 'shopify-website-design-packages',
+    title: 'Shopify Website Design Packages — A Comprehensive Guide',
+    date: 'Oct 17, 2023',
+    author: 'U Suffian',
+    tag: 'Shopify',
+    excerpt: 'A comprehensive guide to Shopify website design packages, what you should expect, what to look for, and how to choose the right package for your eCommerce brand.',
+    color: '#9B5DE5',
+    tc: '#fff',
+  },
+  {
+    slug: 'setting-up-affiliate-program-shopify',
+    title: 'Setting Up Affiliate Program For Shopify Store 2023',
+    date: 'Sep 12, 2023',
+    author: 'Usama',
+    tag: 'Shopify',
+    excerpt: 'Affiliate marketing is one of the best growth strategies for Shopify stores. Learn how to set up and launch a winning affiliate program that drives consistent revenue.',
+    color: '#05C870',
+    tc: '#0A0A0A',
+  },
+  {
+    slug: 'shopify-affiliate-program',
+    title: 'Shopify Affiliate Program 2023: Working, Payments and More',
+    date: 'Aug 5, 2023',
+    author: 'Usama',
+    tag: 'Shopify',
+    excerpt: 'An in-depth look at the Shopify Affiliate Program — how it works, how payments are processed, and whether it\'s worth joining as a creator, agency, or educator.',
+    color: '#F5E642',
+    tc: '#0A0A0A',
+  },
+];
+---
+<Layout
+  title="Blog | Novelty Ads"
+  description="Get all the marketing knowledge, tips and tricks from the official Novelty Ads blog. Covering SEO, paid ads, Shopify, Kickstarter, and more."
+  canonical="https://noveltyads.com/blog/"
+>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">Blog</p>
+    <h1 class="page-hero__title" data-reveal="up">Marketing insights<br>that actually help.</h1>
+    <p class="page-hero__sub" data-reveal="up">Tips, guides, and deep-dives on SEO, paid ads, Shopify, Kickstarter, and everything in between.</p>
+  </div>
+</section>
+
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;" data-stagger>
+      {posts.map(post => (
+        <a href={`/blog/${post.slug}`} style={`background:${post.color};color:${post.tc};border-radius:22px;padding:44px 40px;display:block;text-decoration:none;transition:transform 0.35s cubic-bezier(0.23,1,0.32,1);`}
+          onmouseover="this.style.transform='translateY(-6px)'"
+          onmouseout="this.style.transform='translateY(0)'">
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+            <span style={`font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:4px 12px;border-radius:100px;background:${post.tc === '#0A0A0A' ? 'rgba(0,0,0,0.12)' : 'rgba(255,255,255,0.2)'};`}>{post.tag}</span>
+            <span style="font-size:12px;opacity:0.6;">{post.date} · {post.author}</span>
+          </div>
+          <h2 style="font-size:22px;font-weight:800;line-height:1.2;letter-spacing:-0.02em;margin-bottom:14px;">{post.title}</h2>
+          <p style="font-size:14px;line-height:1.65;opacity:0.75;margin-bottom:28px;">{post.excerpt}</p>
+          <span style="font-size:13px;font-weight:700;">Read Article →</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0 120px;background:#F8F7F4;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Stay Updated</p>
+      <h2 class="cta-title">Want marketing insights<br>delivered to your inbox?</h2>
+      <p class="cta-sub">Get in touch and we'll add you to our list of marketing-savvy subscribers.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-yellow btn-xl">Subscribe →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+<style>
+  @media (max-width:768px) {
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>

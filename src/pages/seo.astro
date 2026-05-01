@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="SEO Agency in UAE & Dubai | Novelty Ads"
+  description="Grow visibility and organic traffic with Novelty Ads' SEO services in Dubai & UAE. On-page, off-page, and technical SEO designed to increase rankings and leads."
+  canonical="https://noveltyads.com/seo-service-agency-uae/"
+>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">SEO Services</p>
+    <h1 class="page-hero__title" data-reveal="up">SEO Agency in<br>UAE &amp; Beyond.</h1>
+    <p class="page-hero__sub" data-reveal="up">Grow visibility and organic traffic with full-spectrum SEO. On-page, off-page, and technical SEO designed to increase your rankings, leads, and revenue.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="up">
+      <a href="/contact" class="btn btn-yellow btn-lg">Get Free SEO Audit</a>
+      <a href="/case-studies" class="btn btn-outline-white btn-lg">Our Results →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <p class="section-eyebrow eyebrow-dark" data-reveal="up">Why Novelty Ads for SEO</p>
+        <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">We don't chase rankings.<br>We chase revenue.</h2>
+      </div>
+      <p class="section-sub sub-dark" style="max-width:440px;" data-reveal="up">Most agencies celebrate page-one rankings. We celebrate when that ranking drives real leads, phone calls, and sales for your business.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" data-stagger>
+      {[
+        { icon: '🔧', color: '#F5E642', tc: '#0A0A0A', title: 'Technical SEO', desc: 'Site speed, Core Web Vitals, crawlability, structured data — your technical foundation built to perfection.' },
+        { icon: '📝', color: '#3A5BF0', tc: '#fff', title: 'On-Page SEO', desc: 'Keyword research, content optimization, meta tags, internal linking — every page fine-tuned to rank.' },
+        { icon: '🔗', color: '#05C870', tc: '#0A0A0A', title: 'Off-Page SEO', desc: 'High-authority link building, digital PR, and brand mentions that signal trust to Google.' },
+        { icon: '🛒', color: '#FF6B35', tc: '#fff', title: 'E-Commerce SEO', desc: 'Category pages, product SEO, and schema markup to drive qualified buyers to your store.' },
+        { icon: '📍', color: '#9B5DE5', tc: '#fff', title: 'Local SEO', desc: 'Google Business Profile, local citations, and geo-targeted content that drives foot traffic.' },
+        { icon: '📊', color: '#FF5CA8', tc: '#fff', title: 'SEO Reporting', desc: 'Monthly reports with transparent KPIs — rankings, traffic, conversions. You always know the ROI.' },
+      ].map(s => (
+        <div class="svc-card" style={`background:${s.color};color:${s.tc};`}>
+          <div class="svc-card__icon" style={s.tc === '#0A0A0A' ? 'background:rgba(0,0,0,0.1)' : ''}>{s.icon}</div>
+          <h3 class="svc-card__title">{s.title}</h3>
+          <p class="svc-card__desc">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section style="padding:120px 0;background:#0A0A0A;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="section-eyebrow eyebrow-light" data-reveal="up">Benefits of SEO in 2026</p>
+      <h2 class="section-title title-light" style="margin-top:14px;" data-reveal="up">Organic traffic is the<br>gift that keeps giving.</h2>
+    </div>
+    <div class="stats-grid" data-reveal="scale">
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="68" data-suffix="%">68%</span></div><div class="stat-cell__label">of online experiences start with a search engine</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="53" data-suffix="%">53%</span></div><div class="stat-cell__label">of website traffic comes from organic search</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="14" data-suffix="×">14×</span></div><div class="stat-cell__label">higher conversion rate vs outbound leads</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="5" data-suffix="x">5x</span></div><div class="stat-cell__label">ROI versus paid advertising (long-term)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;">
+      <p class="section-eyebrow eyebrow-dark" style="margin-bottom:14px;" data-reveal="up">FAQ</p>
+      <h2 class="section-title title-dark" style="margin-bottom:52px;" data-reveal="up">Frequently Asked<br>Questions.</h2>
+      {[
+        { q: 'How long does SEO take to show results?', a: 'Most clients see meaningful traffic improvements within 3–6 months. Technical fixes can show results in weeks. SEO is a compounding investment — the longer you do it, the more powerful it becomes.' },
+        { q: 'Do you work with businesses outside the UAE?', a: 'Absolutely. We work with businesses in the US, UK, Australia, Pakistan, and beyond. Our strategies are tailored to your target market and search landscape.' },
+        { q: 'What makes Novelty Ads different from other SEO agencies?', a: 'We treat SEO as part of your full marketing funnel. We don\'t just rank you — we make sure that traffic converts. Our reporting is transparent and we tie every activity back to business revenue.' },
+        { q: 'Do you offer one-time SEO audits?', a: 'Yes. We offer standalone SEO audits that cover technical health, on-page optimization, backlink profile, and competitor gap analysis. Contact us to get started.' },
+      ].map(faq => (
+        <div class="faq-item">
+          <button class="faq-question">
+            {faq.q}
+            <span class="faq-chevron">+</span>
+          </button>
+          <div class="faq-answer">{faq.a}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0 120px;background:#F8F7F4;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Free SEO Audit</p>
+      <h2 class="cta-title">Find out exactly why<br>your competitors outrank you.</h2>
+      <p class="cta-sub">Get a free, no-obligation SEO audit and competitive analysis from our team.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-yellow btn-xl">Claim Free Audit →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+<style>
+  @media (max-width:768px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>

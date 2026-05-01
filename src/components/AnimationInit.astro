@@ -1,0 +1,119 @@
+---
+---
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import Lenis from '@studio-freight/lenis';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* Lenis smooth scroll */
+  const lenis = new Lenis({
+    duration: 1.15,
+    easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+  });
+
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time: number) => lenis.raf(time * 1000));
+  gsap.ticker.lagSmoothing(0);
+
+  /* Progress bar — commented out, re-enable when needed
+  const progressBar = document.getElementById('progress-bar');
+  if (progressBar) {
+    gsap.to(progressBar, {
+      scaleX: 1,
+      ease: 'none',
+      transformOrigin: 'left center',
+      scrollTrigger: {
+        trigger: document.documentElement,
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 0,
+      }
+    });
+  }
+  */
+
+  /* Generic scroll reveal */
+  document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el) => {
+    const dir = el.dataset.reveal || 'up';
+    const fromVars: gsap.TweenVars = { opacity: 0 };
+    if (dir === 'up')   { fromVars.y = 40; }
+    if (dir === 'left') { fromVars.x = -40; }
+    if (dir === 'right'){ fromVars.x = 40; }
+    if (dir === 'scale'){ fromVars.scale = 0.92; }
+
+    gsap.fromTo(el, fromVars, {
+      opacity: 1,
+      y: 0,
+      x: 0,
+      scale: 1,
+      duration: 0.75,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 92%',
+        toggleActions: 'play none none none',
+      }
+    });
+  });
+
+  /* Stagger groups */
+  document.querySelectorAll<HTMLElement>('[data-stagger]').forEach((parent) => {
+    const children = Array.from(parent.children) as HTMLElement[];
+    gsap.fromTo(children,
+      { opacity: 0, y: 44 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.65,
+        stagger: 0.1,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: parent,
+          start: 'top 85%',
+          toggleActions: 'play none none none',
+        }
+      }
+    );
+  });
+
+  /* Counter animation — starts at 0, counts up once on first viewport entry */
+  document.querySelectorAll<HTMLElement>('.js-counter').forEach((el) => {
+    const target = parseFloat(el.dataset.to || '0');
+    const suffix = el.dataset.suffix || '';
+    const obj = { val: 0 };
+
+    /* Reset to 0 immediately so the hardcoded HTML value is never visible */
+    el.textContent = '0' + suffix;
+
+    ScrollTrigger.create({
+      trigger: el,
+      start: 'top 88%',
+      once: true,
+      onEnter() {
+        gsap.to(obj, {
+          val: target,
+          duration: 2.2,
+          ease: 'power2.out',
+          onUpdate() { el.textContent = Math.round(obj.val) + suffix; }
+        });
+      }
+    });
+  });
+
+  /* FAQ accordion */
+  document.querySelectorAll<HTMLButtonElement>('.faq-question').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling as HTMLElement;
+      const isOpen = answer.classList.contains('open');
+      document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-question.active').forEach(b => b.classList.remove('active'));
+      if (!isOpen) {
+        answer.classList.add('open');
+        btn.classList.add('active');
+      }
+    });
+  });
+</script>

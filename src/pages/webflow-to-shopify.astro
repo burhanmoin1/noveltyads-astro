@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Webflow to Shopify Migration | Novelty Ads"
+  description="Migrate from Webflow to Shopify seamlessly with Novelty Ads. Zero data loss, full design transfer, and conversion-optimised Shopify storefront. Dubai, USA, and global."
+  canonical="https://noveltyads.com/webflow-to-shopify/"
+>
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">Migration Service</p>
+    <h1 class="page-hero__title" data-reveal="up">Webflow → Shopify<br>Migration.</h1>
+    <p class="page-hero__sub" data-reveal="up">Ready to scale your eCommerce on Shopify? We migrate your entire Webflow site — design, content, products, and SEO — without losing a single customer or ranking.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="up">
+      <a href="/contact" class="btn btn-yellow btn-lg">Start Migration</a>
+    </div>
+  </div>
+</section>
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <h2 class="section-title title-dark" data-reveal="up">Why migrate from<br>Webflow to Shopify?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" data-stagger>
+      {[
+        { icon: '🛒', color: '#9B5DE5', tc: '#fff', title: 'Built for eCommerce', desc: 'Shopify is the world\'s leading eCommerce platform with native inventory, payments, and scaling tools.' },
+        { icon: '📈', color: '#05C870', tc: '#0A0A0A', title: 'App Ecosystem', desc: '8,000+ apps for subscriptions, loyalty, reviews, upsells, and every sales channel you need to grow.' },
+        { icon: '⚡', color: '#F5E642', tc: '#0A0A0A', title: 'Performance', desc: 'Shopify\'s global CDN and infrastructure means faster page speeds, better Core Web Vitals, and higher conversions.' },
+      ].map(s => (
+        <div class="svc-card" style={`background:${s.color};color:${s.tc};`}>
+          <div class="svc-card__icon" style={s.tc === '#0A0A0A' ? 'background:rgba(0,0,0,0.1)' : ''}>{s.icon}</div>
+          <h3 class="svc-card__title">{s.title}</h3>
+          <p class="svc-card__desc">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<section style="padding:100px 0 120px;background:#F8F7F4;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <h2 class="cta-title">Ready to make the switch?</h2>
+      <p class="cta-sub">Get a free migration consultation and timeline estimate from our Shopify experts.</p>
+      <div class="cta-actions"><a href="/contact" class="btn btn-yellow btn-xl">Get Free Migration Quote →</a></div>
+    </div>
+  </div>
+</section>
+</Layout>
+<style>@media(max-width:768px){div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr!important;}}</style>

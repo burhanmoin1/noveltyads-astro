@@ -1,0 +1,30 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import AnimationInit from '../components/AnimationInit.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  noindex?: boolean;
+}
+const props = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <BaseHead {...props} />
+</head>
+<body>
+  <Navbar />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <AnimationInit />
+</body>
+</html>

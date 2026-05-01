@@ -1,0 +1,115 @@
+---
+const navLinks = [
+  { href: '/',            label: 'Home' },
+  { href: '/services',    label: 'Services' },
+  { href: '/web-design',  label: 'Web Design' },
+  { href: '/seo',         label: 'SEO' },
+  { href: '/paid-ads',    label: 'Paid Ads' },
+  { href: '/kickstarter', label: 'Kickstarter' },
+  { href: '/case-studies',label: 'Case Studies' },
+  { href: '/about',       label: 'About' },
+];
+
+const currentPath = Astro.url.pathname;
+
+const LOGO_URL = 'https://noveltyads.com/wp-content/uploads/2024/04/Cream-Simple-SEO-Writer-Course-Blog-Banner-700-%C3%97-700-px-1-1.svg';
+---
+
+<!-- Progress bar commented out — re-enable when needed
+<div id="progress-bar"></div>
+-->
+
+<nav class="nav" id="nav" data-path={currentPath}>
+  <div class="nav__inner">
+    <!-- Logo: real image with text fallback -->
+    <a href="/" class="nav__logo" aria-label="Novelty Ads — Home">
+      <img
+        src={LOGO_URL}
+        alt="Novelty Ads"
+        class="nav__logo-img"
+        width="44"
+        height="44"
+        loading="eager"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+      />
+      <span class="nav__logo-text nav__logo-fallback">Novelty<span>Ads</span></span>
+    </a>
+
+    <ul class="nav__links">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class={
+              link.href === '/'
+                ? currentPath === '/' ? 'active' : ''
+                : currentPath === link.href || currentPath.startsWith(link.href + '/') ? 'active' : ''
+            }
+          >{link.label}</a>
+        </li>
+      ))}
+    </ul>
+
+    <div class="nav__right">
+      <a href="/contact" class="btn btn-ghost">Contact</a>
+      <a href="/contact" class="btn btn-dark">Get Started →</a>
+      <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="nav__mobile" id="mobileNav" aria-hidden="true">
+  <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+  {navLinks.filter(l => l.href !== '/').map(link => (
+    <a href={link.href} class={currentPath === link.href || currentPath.startsWith(link.href + '/') ? 'active' : ''}>{link.label}</a>
+  ))}
+  <a href="/contact">Contact</a>
+</div>
+
+<style>
+  .nav__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+  }
+  .nav__logo-img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    border-radius: 10px;
+    display: block;
+  }
+  .nav__logo-fallback {
+    display: none;
+  }
+  .nav__links a.active { color: #0A0A0A; font-weight: 600; }
+  .nav__mobile a.active { color: #0A0A0A; font-weight: 700; }
+</style>
+
+<script>
+  const nav       = document.getElementById('nav')!;
+  const hamburger = document.getElementById('hamburger')!;
+  const mobileNav = document.getElementById('mobileNav')!;
+
+  const isHomepage = nav.dataset.path === '/';
+
+  /* On non-homepage, nav is always solid. On homepage, it appears on scroll. */
+  if (!isHomepage) {
+    nav.classList.add('scrolled');
+  }
+
+  window.addEventListener('scroll', () => {
+    if (isHomepage) {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    }
+  }, { passive: true });
+
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(open));
+    mobileNav.setAttribute('aria-hidden', String(!open));
+  });
+</script>

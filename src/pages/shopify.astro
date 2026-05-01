@@ -1,0 +1,108 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Custom Shopify Web Development Agency | Dubai & USA | Novelty Ads"
+  description="Looking for the best Shopify web development agency in Dubai, USA or Pakistan? Novelty Ads builds fast, secure, conversion-optimised Shopify storefronts. Custom design to full-scale development."
+  canonical="https://noveltyads.com/service/custom-shopify-web-development-agency/"
+>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">Shopify Development</p>
+    <h1 class="page-hero__title" data-reveal="up">Custom Shopify Web<br>Development Agency.</h1>
+    <p class="page-hero__sub" data-reveal="up">Novelty Ads empowers brands to scale with confidence. With over 6 years of eCommerce experience, we build fast, secure, and conversion-optimised Shopify storefronts in Dubai, USA, and globally.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="up">
+      <a href="/contact" class="btn btn-yellow btn-lg">Start Your Shopify Project</a>
+      <a href="/case-studies" class="btn btn-outline-white btn-lg">See Our Stores →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <p class="section-eyebrow eyebrow-dark" data-reveal="up">Shopify Services</p>
+        <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">Every Shopify service<br>under one roof.</h2>
+      </div>
+      <p class="section-sub sub-dark" style="max-width:420px;" data-reveal="up">From MVP stores to enterprise Shopify Plus — we handle every phase of your eCommerce journey.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" data-stagger>
+      {[
+        { icon: '💎', color: '#9B5DE5', tc: '#fff', title: 'Shopify Plus Development', desc: 'Enterprise-grade Shopify Plus builds. Advanced scripts, B2B channels, multi-currency, and custom checkout flows.' },
+        { icon: '🧩', color: '#3A5BF0', tc: '#fff', title: 'Headless Shopify', desc: 'Lightning-fast storefronts with Hydrogen, Next.js, or Nuxt. Decouple your frontend for unmatched speed and UX.' },
+        { icon: '🔧', color: '#F5E642', tc: '#0A0A0A', title: 'Custom App Development', desc: 'Bespoke Shopify apps built for your unique workflows — custom calculators, loyalty systems, and integrations.' },
+        { icon: '🔄', color: '#05C870', tc: '#0A0A0A', title: 'Shopify Migration', desc: 'Seamless migrations from WooCommerce, Magento, BigCommerce, Webflow, Wix, and Squarespace. Zero data loss.' },
+        { icon: '🎨', color: '#FF6B35', tc: '#fff', title: 'Theme Design', desc: 'Custom Liquid theme development. Pixel-perfect designs that match your brand and load in under 2 seconds.' },
+        { icon: '📦', color: '#FF5CA8', tc: '#fff', title: 'ERP & App Integrations', desc: 'Shopify + ERP, CRM, 3PL, and accounting integrations. Your entire stack working seamlessly together.' },
+      ].map(s => (
+        <div class="svc-card" style={`background:${s.color};color:${s.tc};`}>
+          <div class="svc-card__icon" style={s.tc === '#0A0A0A' ? 'background:rgba(0,0,0,0.1)' : ''}>{s.icon}</div>
+          <h3 class="svc-card__title">{s.title}</h3>
+          <p class="svc-card__desc">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Migration paths -->
+<section style="padding:100px 0;background:#0A0A0A;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px;">
+      <p class="section-eyebrow eyebrow-light" data-reveal="up">Migration Services</p>
+      <h2 class="section-title title-light" style="margin-top:14px;" data-reveal="up">Switching to Shopify?<br>We make it painless.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;" data-stagger>
+      {[
+        { from: 'WordPress', to: 'Shopify', href: '/webflow-to-shopify' },
+        { from: 'Webflow', to: 'Shopify', href: '/webflow-to-shopify' },
+        { from: 'Wix', to: 'Shopify', href: '/wix-to-shopify' },
+        { from: 'Squarespace', to: 'Shopify', href: '/squarespace-to-shopify' },
+      ].map(m => (
+        <a href={m.href} style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:22px;padding:36px 28px;text-align:center;display:block;text-decoration:none;color:#fff;transition:background 0.25s,transform 0.3s;"
+          onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(-5px)'"
+          onmouseout="this.style.background='rgba(255,255,255,0.05)';this.style.transform='translateY(0)'">
+          <div style="font-size:13px;color:rgba(255,255,255,0.45);margin-bottom:10px;font-weight:600;">{m.from}</div>
+          <div style="font-size:28px;margin-bottom:10px;">→</div>
+          <div style="font-size:18px;font-weight:800;color:#F5E642;">{m.to}</div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section style="padding:120px 0;background:#EFEDE8;">
+  <div class="container">
+    <div class="stats-grid" data-reveal="scale">
+      <div class="stat-cell"><div class="stat-cell__num">6+</div><div class="stat-cell__label">Years eCommerce Experience</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="40" data-suffix="+">40+</span></div><div class="stat-cell__label">Stores Built & Migrated</div></div>
+      <div class="stat-cell"><div class="stat-cell__num">100%</div><div class="stat-cell__label">Data Preservation on Migrations</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="2" data-suffix="s">&lt;2s</span></div><div class="stat-cell__label">Avg. Page Load Time</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0 120px;background:#EFEDE8;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Ready to Scale?</p>
+      <h2 class="cta-title">Build a Shopify store<br>that actually converts.</h2>
+      <p class="cta-sub">Get a free consultation and project estimate from our Shopify expert team.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-yellow btn-xl">Get Free Estimate →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+<style>
+  @media (max-width:768px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+  }
+</style>

@@ -1,0 +1,83 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import AnimationInit from '../components/AnimationInit.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  date?: string;
+  author?: string;
+  tag?: string;
+  readTime?: string;
+}
+const { title, description, canonical, date, author, tag, readTime } = Astro.props;
+const fullTitle = `${title} | Novelty Ads Blog`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <BaseHead title={fullTitle} description={description} canonical={canonical ?? Astro.url.href} />
+  <style>
+    .prose h2 { font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-0.02em;margin:48px 0 16px;color:#0A0A0A; }
+    .prose h3 { font-size:20px;font-weight:700;margin:32px 0 12px;color:#0A0A0A; }
+    .prose p  { font-size:17px;line-height:1.8;color:#444;margin-bottom:22px; }
+    .prose ul, .prose ol { padding-left:24px;margin-bottom:22px; }
+    .prose li { font-size:17px;line-height:1.75;color:#444;margin-bottom:8px; }
+    .prose strong { color:#0A0A0A;font-weight:700; }
+    .prose a { color:#3A5BF0;font-weight:500;text-decoration:underline;text-underline-offset:3px; }
+    .prose blockquote { border-left:4px solid #F5E642;padding:16px 24px;background:#EFEDE8;border-radius:0 12px 12px 0;margin:32px 0;font-style:italic;color:#6B6B6B; }
+  </style>
+</head>
+<body>
+  <Navbar />
+  <main>
+    <!-- Blog Hero -->
+    <section style="padding:130px 0 64px;background:#0A0A0A;position:relative;overflow:hidden;">
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(245,230,66,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+      <div class="container" style="position:relative;z-index:1;max-width:800px;">
+        {tag && <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:#F5E642;margin-bottom:16px;">{tag}</p>}
+        <h1 style="font-size:clamp(32px,4.5vw,52px);font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:#fff;margin-bottom:20px;">{title}</h1>
+        <p style="font-size:17px;line-height:1.65;color:rgba(255,255,255,0.5);margin-bottom:32px;">{description}</p>
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+          {author && <span style="font-size:14px;color:rgba(255,255,255,0.45);">By <strong style="color:rgba(255,255,255,0.7);">{author}</strong></span>}
+          {date && <span style="font-size:14px;color:rgba(255,255,255,0.35);">{date}</span>}
+          {readTime && <span style="font-size:14px;color:rgba(255,255,255,0.35);">{readTime} read</span>}
+        </div>
+      </div>
+    </section>
+
+    <!-- Content -->
+    <section style="padding:72px 0 100px;background:#F8F7F4;">
+      <div class="container" style="max-width:800px;">
+        <article class="prose">
+          <slot />
+        </article>
+
+        <div style="margin-top:64px;padding-top:40px;border-top:1px solid rgba(0,0,0,0.08);">
+          <a href="/blog" class="btn btn-ghost">← Back to Blog</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding:80px 0 100px;background:#F8F7F4;">
+      <div class="container">
+        <div class="cta-box">
+          <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Work With Us</p>
+          <h2 class="cta-title">Need help with your<br>digital marketing?</h2>
+          <p class="cta-sub">Book a free discovery call with our team today.</p>
+          <div class="cta-actions">
+            <a href="/contact" class="btn btn-yellow btn-xl">Book Free Call →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <AnimationInit />
+</body>
+</html>

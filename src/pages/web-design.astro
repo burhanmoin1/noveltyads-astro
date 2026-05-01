@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Web Design & Development Company | Novelty Ads"
+  description="Modern, responsive web design & development by Novelty Ads. We build conversion-optimised business websites for brands in Dubai, USA, Australia and beyond."
+  canonical="https://noveltyads.com/website-design-solutions/"
+>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">Web Design & Development</p>
+    <h1 class="page-hero__title" data-reveal="up">Website Design &amp;<br>Development Solutions.</h1>
+    <p class="page-hero__sub" data-reveal="up">Beautiful, conversion-optimised websites that match your brand's mission and vision. We build on WordPress, Webflow, Shopify, and custom stacks.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="up">
+      <a href="/contact" class="btn btn-yellow btn-lg">Get a Free Quote</a>
+      <a href="/case-studies" class="btn btn-outline-white btn-lg">See Our Work →</a>
+    </div>
+  </div>
+</section>
+
+<!-- What we focus on -->
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <p class="section-eyebrow eyebrow-dark" data-reveal="up">Focused On What Matters</p>
+        <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">Websites that work<br>as hard as you do.</h2>
+      </div>
+      <p class="section-sub sub-dark" style="max-width:440px;" data-reveal="up">Every pixel is intentional. Every interaction is designed to guide your visitor toward becoming a customer.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" data-stagger>
+      {[
+        { icon: '⚡', title: 'Lightning Fast', desc: 'Core Web Vitals optimised. Sub-2s load times. Your site speed is your competitive advantage.' },
+        { icon: '📱', title: 'Mobile First', desc: 'Designed for every screen size — from iPhone to 4K monitors. Seamless across all devices.' },
+        { icon: '🔍', title: 'SEO Ready', desc: 'Clean semantic HTML, schema markup, sitemap generation — built to rank from day one.' },
+        { icon: '🎨', title: 'Brand Aligned', desc: 'Your website should look like you. We design to your brand identity, not a template.' },
+        { icon: '🔒', title: 'Secure & Reliable', desc: 'SSL, daily backups, uptime monitoring. Your business never goes offline.' },
+        { icon: '📈', title: 'Conversion Optimised', desc: 'CTAs, landing pages, and funnels engineered to turn visitors into paying customers.' },
+      ].map(f => (
+        <div class="process-card">
+          <div style="font-size:32px;margin-bottom:16px;">{f.icon}</div>
+          <h3 style="font-size:17px;font-weight:700;margin-bottom:8px;">{f.title}</h3>
+          <p style="font-size:14px;line-height:1.65;color:#6B6B6B;">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Case Studies -->
+<section style="padding:120px 0;background:#0A0A0A;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="section-eyebrow eyebrow-light" data-reveal="up">Our Work</p>
+      <h2 class="section-title title-light" style="margin-top:14px;" data-reveal="up">Real websites.<br>Real results.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;" data-stagger>
+      {[
+        { name: 'Open Door Valet', type: 'WordPress Website', color: '#F5E642', tc: '#0A0A0A' },
+        { name: 'The Next Step Program', type: 'WordPress Website', color: '#3A5BF0', tc: '#fff' },
+        { name: 'Chic Liquidation', type: 'Ecommerce Store', color: '#05C870', tc: '#0A0A0A' },
+        { name: 'Espinal Consultores', type: 'WordPress Website', color: '#9B5DE5', tc: '#fff' },
+        { name: 'Neros Foods', type: 'E-commerce Web Design', color: '#FF6B35', tc: '#fff' },
+        { name: 'Locobebe', type: 'Web Design', color: '#FF5CA8', tc: '#fff' },
+      ].map(cs => (
+        <div style={`background:${cs.color};color:${cs.tc};border-radius:22px;padding:44px 40px;transition:transform 0.35s cubic-bezier(0.23,1,0.32,1);`}
+          onmouseover="this.style.transform='translateY(-6px)'"
+          onmouseout="this.style.transform='translateY(0)'">
+          <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;opacity:0.65;margin-bottom:12px;">{cs.type}</div>
+          <h3 style="font-size:26px;font-weight:800;letter-spacing:-0.02em;margin-bottom:24px;">{cs.name}</h3>
+          <a href="/case-studies" style={`display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:${cs.tc};opacity:0.85;`}>View project →</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto 64px;">
+      <p class="section-eyebrow eyebrow-dark" data-reveal="up">Our Process</p>
+      <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">From brief to launch<br>in weeks, not months.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;" data-stagger>
+      {['Discovery & Brief','Design & Prototype','Development','Launch & Support'].map((step, i) => (
+        <div class="process-card">
+          <div class="process-num">0{i+1}</div>
+          <h3 style="font-size:17px;font-weight:700;">{step}</h3>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0 120px;background:#F8F7F4;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Ready for a New Website?</p>
+      <h2 class="cta-title">Let's build something<br>remarkable together.</h2>
+      <p class="cta-sub">Get a free consultation and website audit from our team of expert designers.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-yellow btn-xl">Get Free Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+<style>
+  @media (max-width:768px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(4,1fr)"] { grid-template-columns: repeat(2,1fr) !important; }
+  }
+</style>

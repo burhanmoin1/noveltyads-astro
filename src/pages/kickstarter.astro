@@ -1,0 +1,114 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Best Kickstarter Marketing Agency | Novelty Ads"
+  description="Looking for a results-driven Kickstarter marketing agency? Novelty Ads specializes in fundraising strategies that drive crowdfunding success. We've helped raise over $600k. Get Funded Today!"
+  canonical="https://noveltyads.com/kickstarter/"
+>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">Kickstarter Marketing Agency</p>
+    <h1 class="page-hero__title" data-reveal="up">Your campaign deserves<br>more than average results.</h1>
+    <p class="page-hero__sub" data-reveal="up">Partner with the best Kickstarter marketing agency and watch your ads turn curious clicks into committed backers. We've helped crowdfund over $600k.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="up">
+      <a href="/contact" class="btn btn-yellow btn-lg">Get Funded Today</a>
+      <a href="/case-studies" class="btn btn-outline-white btn-lg">See Campaign Results →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Big stats -->
+<section style="padding:100px 0;background:#F5E642;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border-radius:22px;overflow:hidden;background:rgba(0,0,0,0.08);" data-reveal="scale">
+      <div style="background:#F5E642;padding:60px 40px;text-align:center;">
+        <div style="font-size:clamp(52px,6vw,80px);font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;"><span class="js-counter" data-to="613" data-suffix="k+">613k+</span></div>
+        <div style="font-size:15px;font-weight:600;color:rgba(0,0,0,0.55);">Total Dollars Raised</div>
+      </div>
+      <div style="background:#0A0A0A;color:#fff;padding:60px 40px;text-align:center;">
+        <div style="font-size:clamp(52px,6vw,80px);font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;color:#F5E642;"><span class="js-counter" data-to="5923" data-suffix="+">5,923+</span></div>
+        <div style="font-size:15px;font-weight:600;color:rgba(255,255,255,0.45);">Total Backers</div>
+      </div>
+      <div style="background:#F5E642;padding:60px 40px;text-align:center;">
+        <div style="font-size:clamp(52px,6vw,80px);font-weight:800;letter-spacing:-0.04em;line-height:1;margin-bottom:10px;"><span class="js-counter" data-to="507" data-suffix="%">507%</span></div>
+        <div style="font-size:15px;font-weight:600;color:rgba(0,0,0,0.55);">Max Funding Achieved</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="section-eyebrow eyebrow-dark" data-reveal="up">Our Kickstarter Services</p>
+      <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">Everything you need to<br>fund your vision.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" data-stagger>
+      {[
+        { icon: '📣', color: '#F5E642', tc: '#0A0A0A', title: 'Pre-Launch Marketing', desc: 'Build a warm audience before you go live. Email list building, social media, and PR outreach that primes your launch for success.' },
+        { icon: '🚀', color: '#3A5BF0', tc: '#fff', title: 'Launch Marketing', desc: 'Paid ads on Meta, Google, and Reddit timed perfectly for your campaign window. We drive backers when it matters most.' },
+        { icon: '🎯', color: '#05C870', tc: '#0A0A0A', title: 'Campaign Consulting', desc: 'Page copy, reward tiers, stretch goals, video scripts — we review and optimise every element of your campaign page.' },
+        { icon: '📊', color: '#FF6B35', tc: '#fff', title: 'Analytics & Optimization', desc: 'Daily monitoring, A/B testing of ad creatives and targeting, and pivot strategies based on real backer data.' },
+        { icon: '✍️', color: '#9B5DE5', tc: '#fff', title: 'Content Creation', desc: 'Ad creative, social content, backer update emails, and PR outreach all handled by our creative team.' },
+        { icon: '🤝', color: '#FF5CA8', tc: '#fff', title: 'Community Building', desc: 'Turn backers into brand ambassadors. We build engaged communities that carry campaigns well beyond the finish line.' },
+      ].map(s => (
+        <div class="svc-card" style={`background:${s.color};color:${s.tc};`}>
+          <div class="svc-card__icon" style={s.tc === '#0A0A0A' ? 'background:rgba(0,0,0,0.1)' : ''}>{s.icon}</div>
+          <h3 class="svc-card__title">{s.title}</h3>
+          <p class="svc-card__desc">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- Campaign examples -->
+<section style="padding:120px 0;background:#0A0A0A;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="section-eyebrow eyebrow-light" data-reveal="up">Campaigns We've Helped</p>
+      <h2 class="section-title title-light" style="margin-top:14px;" data-reveal="up">Join hands with us and turn<br>your crowdfunding dreams into reality.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;" data-stagger>
+      {[
+        { name: 'Word Explosion by Uh-Oh Games', raised: '$10,315', backers: '237', funded: '147%', color: '#F5E642', tc: '#0A0A0A' },
+        { name: 'Leap Smart Oven', raised: '$495,712', backers: '4,120', funded: '507%', color: '#3A5BF0', tc: '#fff' },
+        { name: 'Leni Kids Studio', raised: '$72,600', backers: '890', funded: '363%', color: '#05C870', tc: '#0A0A0A' },
+        { name: 'Neros Foods', raised: '$34,497', backers: '676', funded: '231%', color: '#FF6B35', tc: '#fff' },
+      ].map(c => (
+        <div style={`background:${c.color};color:${c.tc};border-radius:22px;padding:44px 40px;`}>
+          <h3 style="font-size:22px;font-weight:800;letter-spacing:-0.02em;margin-bottom:24px;">{c.name}</h3>
+          <div style="display:flex;gap:32px;">
+            <div><div style="font-size:28px;font-weight:800;letter-spacing:-0.03em;">{c.raised}</div><div style="font-size:12px;opacity:0.65;margin-top:2px;">Raised</div></div>
+            <div><div style="font-size:28px;font-weight:800;letter-spacing:-0.03em;">{c.backers}</div><div style="font-size:12px;opacity:0.65;margin-top:2px;">Backers</div></div>
+            <div><div style="font-size:28px;font-weight:800;letter-spacing:-0.03em;">{c.funded}</div><div style="font-size:12px;opacity:0.65;margin-top:2px;">Funded</div></div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0 120px;background:#F8F7F4;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Launching Soon?</p>
+      <h2 class="cta-title">Let's make your campaign<br>the next success story.</h2>
+      <p class="cta-sub">Book a free Kickstarter strategy call. We'll review your campaign and build a custom marketing plan.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-yellow btn-xl">Book Free Strategy Call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+<style>
+  @media (max-width:768px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>

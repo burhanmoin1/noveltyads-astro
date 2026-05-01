@@ -1,0 +1,75 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout
+  title="Email Marketing Services | Novelty Ads"
+  description="Boost your business with expert email marketing services from Novelty Ads. Drive engagement, conversions, and growth with automated sequences, Klaviyo, and retention campaigns."
+  canonical="https://noveltyads.com/e-mail-marketing-services/"
+>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">Email Marketing</p>
+    <h1 class="page-hero__title" data-reveal="up">Elevate Your Business<br>with Targeted Email.</h1>
+    <p class="page-hero__sub" data-reveal="up">Automated sequences, retention campaigns, and newsletters that keep customers coming back. Email remains the highest-ROI marketing channel — and we master it.</p>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;" data-reveal="up">
+      <a href="/contact" class="btn btn-yellow btn-lg">Start Email Marketing</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:64px;">
+      <p class="section-eyebrow eyebrow-dark" data-reveal="up">What We Offer</p>
+      <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">Emails that people actually<br>open, read, and click.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" data-stagger>
+      {[
+        { icon: '⚙️', color: '#F5E642', tc: '#0A0A0A', title: 'Automated Flows', desc: 'Welcome series, abandoned cart, post-purchase, winback, and browse abandonment — automated flows that generate revenue 24/7.' },
+        { icon: '📰', color: '#3A5BF0', tc: '#fff', title: 'Campaign Management', desc: 'Promotional campaigns, product launches, seasonal sends — planned, written, designed, and deployed by our team.' },
+        { icon: '🔬', color: '#05C870', tc: '#0A0A0A', title: 'A/B Testing', desc: 'Subject lines, send times, creative, and CTAs — we test everything and optimize for maximum open and click rates.' },
+        { icon: '📋', color: '#FF6B35', tc: '#fff', title: 'List Segmentation', desc: 'Right message, right person, right time. Advanced segmentation ensures your subscribers get relevant content.' },
+        { icon: '📊', color: '#9B5DE5', tc: '#fff', title: 'Analytics & Reporting', desc: 'Open rates, CTRs, revenue per email, deliverability — full transparency on every campaign performance.' },
+        { icon: '🔗', color: '#FF5CA8', tc: '#fff', title: 'Platform Setup', desc: 'Klaviyo, Mailchimp, ActiveCampaign — we set up, migrate, and manage your email platform end to end.' },
+      ].map(s => (
+        <div class="svc-card" style={`background:${s.color};color:${s.tc};`}>
+          <div class="svc-card__icon" style={s.tc === '#0A0A0A' ? 'background:rgba(0,0,0,0.1)' : ''}>{s.icon}</div>
+          <h3 class="svc-card__title">{s.title}</h3>
+          <p class="svc-card__desc">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section style="padding:120px 0;background:#EFEDE8;">
+  <div class="container">
+    <div class="stats-grid" data-reveal="scale">
+      <div class="stat-cell"><div class="stat-cell__num">$42</div><div class="stat-cell__label">Average ROI per $1 spent on email</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="4" data-suffix="B+">4B+</span></div><div class="stat-cell__label">Email users worldwide in 2026</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="40" data-suffix="%">40%</span></div><div class="stat-cell__label">Higher open rates with segmentation</div></div>
+      <div class="stat-cell"><div class="stat-cell__num"><span class="js-counter" data-to="80" data-suffix="%">80%</span></div><div class="stat-cell__label">Of customers prefer email for promotions</div></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0 120px;background:#EFEDE8;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Contact Us</p>
+      <h2 class="cta-title">Ready to turn your email list<br>into a revenue engine?</h2>
+      <p class="cta-sub">Book a free consultation and we'll audit your current email program.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-yellow btn-xl">Get Free Consultation →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+<style>
+  @media (max-width:768px) {
+    div[style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>

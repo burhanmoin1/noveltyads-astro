@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const caseStudies = [
+  { name: 'Open Door Valet', type: 'Web Design', service: 'WordPress Website', color: '#F5E642', tc: '#0A0A0A', desc: 'Complete brand refresh and high-performance WordPress site for a premium valet parking service in the USA.' },
+  { name: 'The Next Step Program', type: 'Web Design', service: 'WordPress Website', color: '#3A5BF0', tc: '#fff', desc: 'Custom WordPress site for a career development and coaching programme. CTA-optimised landing pages driving lead generation.' },
+  { name: 'Chic Liquidation', type: 'E-commerce', service: 'Shopify Store', color: '#05C870', tc: '#0A0A0A', desc: 'Full Shopify store build for a fashion liquidation brand. Custom theme, product filtering, and conversion-focused UX.' },
+  { name: 'Espinal Consultores', type: 'Web Design', service: 'WordPress Website', color: '#9B5DE5', tc: '#fff', desc: 'Professional consulting firm website with multilingual support and appointment booking integration.' },
+  { name: 'Neros Foods', type: 'E-commerce', service: 'E-commerce Web Design', color: '#FF6B35', tc: '#fff', desc: 'Food brand e-commerce site with rich storytelling, recipe content, and Shopify checkout optimisation.' },
+  { name: 'Locobebe', type: 'Web Design', service: 'Brand Website', color: '#FF5CA8', tc: '#fff', desc: 'Kids product brand website with playful design system, product showcase, and lead capture forms.' },
+];
+---
+<Layout
+  title="Case Studies | Novelty Ads"
+  description="Explore Novelty Ads' case studies — web design, e-commerce, Shopify, and digital marketing results for clients across the USA, UAE, Australia, and Pakistan."
+  canonical="https://noveltyads.com/case-studies/"
+>
+
+<section class="page-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <p class="page-hero__eyebrow" data-reveal="up">Case Studies</p>
+    <h1 class="page-hero__title" data-reveal="up">Real clients.<br>Real results.</h1>
+    <p class="page-hero__sub" data-reveal="up">Explore how we've helped businesses across the globe build stunning websites, launch campaigns, and grow their revenue through full-stack digital marketing.</p>
+  </div>
+</section>
+
+<section style="padding:120px 0;background:#F8F7F4;">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;" data-stagger>
+      {caseStudies.map(cs => (
+        <div style={`background:${cs.color};color:${cs.tc};border-radius:22px;padding:52px 44px;transition:transform 0.35s cubic-bezier(0.23,1,0.32,1);`}
+          onmouseover="this.style.transform='translateY(-6px)'"
+          onmouseout="this.style.transform='translateY(0)'">
+          <div style="display:flex;gap:10px;margin-bottom:20px;">
+            <span style={`font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:5px 12px;border-radius:100px;background:${cs.tc === '#0A0A0A' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.15)'};`}>{cs.type}</span>
+            <span style={`font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;padding:5px 12px;border-radius:100px;background:${cs.tc === '#0A0A0A' ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.15)'};`}>{cs.service}</span>
+          </div>
+          <h3 style="font-size:28px;font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin-bottom:16px;">{cs.name}</h3>
+          <p style="font-size:15px;line-height:1.65;opacity:0.75;margin-bottom:32px;">{cs.desc}</p>
+          <span style={`display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:700;color:${cs.tc};`}>View Project →</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section style="padding:100px 0 120px;background:#F8F7F4;">
+  <div class="container">
+    <div class="cta-box" data-reveal="scale">
+      <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Your Turn</p>
+      <h2 class="cta-title">Want results like these?<br>Let's talk.</h2>
+      <p class="cta-sub">Book a free discovery call and we'll show you exactly what we can do for your business.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn-yellow btn-xl">Book Free Call →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</Layout>
+<style>
+  @media (max-width:768px) {
+    div[style*="grid-template-columns:repeat(2,1fr)"] { grid-template-columns: 1fr !important; }
+  }
+</style>
