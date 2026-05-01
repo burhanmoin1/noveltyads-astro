@@ -1150,4 +1150,20 @@ button {
     .page-hero {
         padding: 110px 0 60px;
     }
+    section[style*="padding:120px"],
+    section[style*="padding: 120px"] {
+        padding: 60px 0 !important;
+    }
+    section[style*="padding:60px 0 120px"] {
+        padding: 40px 0 60px !important;
+    }
+    section[style*="padding:100px 0 120px"] {
+        padding: 48px 0 60px !important;
+    }
+    .process-heading {
+        font-size: clamp(36px, 10vw, 60px);
+    }
+    #process header {
+        margin-bottom: 48px !important;
+    }
 }
