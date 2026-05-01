@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
 
         <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:40px;" data-reveal="up">
           <a href="/contact" class="btn btn-dark btn-lg">Get Started Free</a>
-          <a href="/case-studies" class="btn btn-ghost btn-lg">View Case Studies →</a>
+          <a href="#home-case-studies" class="btn btn-ghost btn-lg">View Case Studies →</a>
         </div>
 
         <div style="display:flex;align-items:center;gap:12px;font-size:13px;color:#6B6B6B;margin-bottom:40px;" data-reveal="up">
@@ -149,23 +149,34 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ═══ MARQUEE ═══ -->
-<div style="padding:52px 0;border-top:1px solid rgba(0,0,0,0.08);border-bottom:1px solid rgba(0,0,0,0.08);">
-  <p style="text-align:center;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:#6B6B6B;margin-bottom:26px;">Trusted by organizations across the globe</p>
+<!-- ═══ CLIENTS LOGO STRIP ═══ -->
+<div style="padding:52px 0;border-top:1px solid rgba(0,0,0,0.08);">
+  <p style="text-align:center;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;color:#aaa;margin-bottom:40px;">Organizations that trust Novelty Ads</p>
   <div class="marquee-outer">
     <div class="marquee-track">
-      {['Pine Ridge','EXO Agency','Kickstarter Projects','E-Commerce Brands','Shopify Merchants','UAE Businesses','US Startups','AU Companies','PK Enterprises','Pine Ridge','EXO Agency','Kickstarter Projects','E-Commerce Brands','Shopify Merchants','UAE Businesses','US Startups','AU Companies','PK Enterprises'].map((name, i) => (
-        <div class="marquee-item">
-          <span class="marquee-dot" style={`background:${['#FF6B35','#3A5BF0','#05C870','#9B5DE5','#F5E642','#FF5CA8'][i % 6]}`}></span>
-          {name}
-        </div>
-      ))}
+      <!-- Set 1 -->
+      <div class="marquee-item"><img src="/images/clients/stress-factory.png" alt="Stress Factory Comedy Club" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/bury-hatchet.png" alt="Bury the Hatchet" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/amazing-escape-room.png" alt="Amazing Escape Room" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/malise-marine.png" alt="Friday's Malise Marine" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/keystone.png" alt="Keystone Contracting" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/pine-ridge.png" alt="Pine Ridge Dude Ranch" height="38" loading="lazy" /></div>
+      <!-- Set 2 — duplicate for seamless infinite loop -->
+      <div class="marquee-item"><img src="/images/clients/stress-factory.png" alt="Stress Factory Comedy Club" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/bury-hatchet.png" alt="Bury the Hatchet" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/amazing-escape-room.png" alt="Amazing Escape Room" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/malise-marine.png" alt="Friday's Malise Marine" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/keystone.png" alt="Keystone Contracting" height="38" loading="lazy" /></div>
+      <div class="marquee-item"><img src="/images/clients/pine-ridge.png" alt="Pine Ridge Dude Ranch" height="38" loading="lazy" /></div>
     </div>
   </div>
 </div>
 
+<!-- Section gradient ramp: cream → black -->
+<div aria-hidden="true" style="height:90px;background:linear-gradient(180deg,#F8F7F4 0%,#0A0A0A 100%);display:block;"></div>
+
 <!-- ═══ SERVICES ═══ -->
-<section style="padding:120px 0;background:#0A0A0A;" id="services">
+<section style="padding:60px 0 120px;background:#0A0A0A;" id="services">
   <div class="container">
     <div class="section-header">
       <div class="section-header-left">
@@ -303,40 +314,142 @@ import Layout from '../layouts/Layout.astro';
   </div>
 </section>
 
-<!-- ═══ PROCESS ═══ -->
-<section style="padding:120px 0;background:#F8F7F4;">
+<!-- ═══ CASE STUDIES ═══ -->
+<section id="home-case-studies" style="padding:120px 0;background:#F8F7F4;">
   <div class="container">
-    <div style="text-align:center;max-width:580px;margin:0 auto 64px;">
-      <p class="section-eyebrow eyebrow-dark" data-reveal="up">How We Work</p>
-      <h2 class="section-title title-dark" style="margin-top:14px;" data-reveal="up">Simple process.<br>Extraordinary results.</h2>
+    <div class="section-header" data-reveal="up">
+      <div class="section-header-left">
+        <p class="section-eyebrow eyebrow-dark">Case Studies</p>
+        <h2 class="section-title title-dark" style="margin-top:14px;">Real clients.<br>Real results.</h2>
+      </div>
+      <a href="/case-studies" class="btn btn-ghost">View all case studies →</a>
     </div>
-    <div class="process-grid-mobile" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;" data-stagger>
-      <div class="process-card">
-        <div class="process-num">01</div>
-        <h3 style="font-size:17px;font-weight:700;margin-bottom:8px;">Discovery Call</h3>
-        <p style="font-size:14px;line-height:1.65;color:#6B6B6B;">Free 7-day trial consultation to understand your business goals and current marketing challenges.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-num">02</div>
-        <h3 style="font-size:17px;font-weight:700;margin-bottom:8px;">Strategy &amp; Planning</h3>
-        <p style="font-size:14px;line-height:1.65;color:#6B6B6B;">Our team crafts a custom, data-driven strategy tailored to your brand's mission and growth objectives.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-num">03</div>
-        <h3 style="font-size:17px;font-weight:700;margin-bottom:8px;">Execution</h3>
-        <p style="font-size:14px;line-height:1.65;color:#6B6B6B;">We launch campaigns, build pages, and construct full marketing funnels with precision.</p>
-      </div>
-      <div class="process-card">
-        <div class="process-num">04</div>
-        <h3 style="font-size:17px;font-weight:700;margin-bottom:8px;">Optimise &amp; Scale</h3>
-        <p style="font-size:14px;line-height:1.65;color:#6B6B6B;">Continuous testing, transparent reporting, and relentless optimisation every single month.</p>
-      </div>
+
+    <div class="home-cs-grid" data-stagger>
+
+      <a href="/case-studies" class="home-cs-card">
+        <div class="home-cs-card__media">
+          <img src="/images/case-studies/open-door-valet.png" alt="Open Door Valet" loading="lazy" decoding="async" />
+          <span class="home-cs-card__badge" style="background:#0A0A0A;">Web Design</span>
+        </div>
+        <div class="home-cs-card__body">
+          <p class="home-cs-card__service">WordPress Website</p>
+          <h3 class="home-cs-card__title">Open Door Valet</h3>
+        </div>
+      </a>
+
+      <a href="/case-studies" class="home-cs-card">
+        <div class="home-cs-card__media">
+          <img src="/images/case-studies/next-step-program.png" alt="The Next Step Program" loading="lazy" decoding="async" />
+          <span class="home-cs-card__badge" style="background:#3A5BF0;">Web Design</span>
+        </div>
+        <div class="home-cs-card__body">
+          <p class="home-cs-card__service">WordPress Website</p>
+          <h3 class="home-cs-card__title">The Next Step Program</h3>
+        </div>
+      </a>
+
+      <a href="/case-studies" class="home-cs-card">
+        <div class="home-cs-card__media">
+          <img src="/images/case-studies/chic-liquidation.png" alt="Chic Liquidation" loading="lazy" decoding="async" />
+          <span class="home-cs-card__badge" style="background:#FF5CA8;">E-Commerce</span>
+        </div>
+        <div class="home-cs-card__body">
+          <p class="home-cs-card__service">Shopify Store</p>
+          <h3 class="home-cs-card__title">Chic Liquidation</h3>
+        </div>
+      </a>
+
+      <a href="/case-studies" class="home-cs-card">
+        <div class="home-cs-card__media">
+          <img src="/images/case-studies/espinal-consultores.png" alt="Espinal Consultores" loading="lazy" decoding="async" />
+          <span class="home-cs-card__badge" style="background:#05C870;color:#0A0A0A;">Web Design</span>
+        </div>
+        <div class="home-cs-card__body">
+          <p class="home-cs-card__service">WordPress Website</p>
+          <h3 class="home-cs-card__title">Espinal Consultores</h3>
+        </div>
+      </a>
+
+      <a href="/case-studies" class="home-cs-card">
+        <div class="home-cs-card__media">
+          <img src="/images/case-studies/neros-foods.png" alt="Neros Foods" loading="lazy" decoding="async" />
+          <span class="home-cs-card__badge" style="background:#FF6B35;">E-Commerce</span>
+        </div>
+        <div class="home-cs-card__body">
+          <p class="home-cs-card__service">Shopify + Web Design</p>
+          <h3 class="home-cs-card__title">Neros Foods</h3>
+        </div>
+      </a>
+
+      <a href="/case-studies" class="home-cs-card">
+        <div class="home-cs-card__media">
+          <img src="/images/case-studies/locobebe.png" alt="Locobebe" loading="lazy" decoding="async" />
+          <span class="home-cs-card__badge" style="background:#9B5DE5;">Web Design</span>
+        </div>
+        <div class="home-cs-card__body">
+          <p class="home-cs-card__service">Brand Website</p>
+          <h3 class="home-cs-card__title">Locobebe</h3>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROCESS ═══ -->
+<section id="process" style="padding:120px 0;background:#F9F9F9;">
+  <div class="container">
+    <header style="text-align:center;margin-bottom:96px;">
+      <span class="process-eyebrow">How We Work</span>
+      <h2 class="process-heading">
+        Simple process.<br>
+        <span style="color:#d1d5db;">Extraordinary results.</span>
+      </h2>
+    </header>
+    <div class="process-grid-mobile" style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;" data-stagger>
+      <article class="process-card">
+        <div class="process-num-wrap">
+          <span class="process-num">01</span>
+        </div>
+        <div class="process-card-body">
+          <h3 class="process-card-title">Discovery Call</h3>
+          <p class="process-card-desc">Free 7-day trial consultation to understand your business goals and current marketing challenges.</p>
+        </div>
+      </article>
+      <article class="process-card">
+        <div class="process-num-wrap">
+          <span class="process-num">02</span>
+        </div>
+        <div class="process-card-body">
+          <h3 class="process-card-title">Strategy &amp; Planning</h3>
+          <p class="process-card-desc">Our team crafts a custom, data-driven strategy tailored to your brand's mission and growth objectives.</p>
+        </div>
+      </article>
+      <article class="process-card">
+        <div class="process-num-wrap">
+          <span class="process-num">03</span>
+        </div>
+        <div class="process-card-body">
+          <h3 class="process-card-title">Execution</h3>
+          <p class="process-card-desc">We launch campaigns, build pages, and construct full marketing funnels with precision.</p>
+        </div>
+      </article>
+      <article class="process-card">
+        <div class="process-num-wrap">
+          <span class="process-num">04</span>
+        </div>
+        <div class="process-card-body">
+          <h3 class="process-card-title">Optimise &amp; Scale</h3>
+          <p class="process-card-desc">Continuous testing, transparent reporting, and relentless optimisation every single month.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
 <!-- ═══ CTA ═══ -->
-<section style="padding:100px 0 120px;background:#F8F7F4;">
+<section class="cta-section" style="padding:100px 0 120px;background:#F8F7F4;">
   <div class="container">
     <div class="cta-box" data-reveal="scale">
       <p class="section-eyebrow" style="color:rgba(255,255,255,0.3);margin-bottom:14px;">Get Started Today</p>
@@ -372,6 +485,55 @@ import Layout from '../layouts/Layout.astro';
 </script>
 
 <style>
+  /* ── Homepage case study grid ── */
+  .home-cs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .home-cs-card {
+    background: #fff;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.35s cubic-bezier(0.23,1,0.32,1), box-shadow 0.35s;
+  }
+  .home-cs-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 56px rgba(0,0,0,0.1);
+  }
+  .home-cs-card__media {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: #eee;
+  }
+  .home-cs-card__media img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform 0.5s cubic-bezier(0.23,1,0.32,1);
+  }
+  .home-cs-card:hover .home-cs-card__media img { transform: scale(1.04); }
+  .home-cs-card__badge {
+    position: absolute; top: 14px; left: 14px;
+    color: #fff; font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 4px 12px; border-radius: 100px;
+  }
+  .home-cs-card__body { padding: 22px 24px 26px; }
+  .home-cs-card__service {
+    font-size: 11px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em;
+    color: #aaa; margin-bottom: 6px;
+  }
+  .home-cs-card__title {
+    font-size: 20px; font-weight: 800;
+    letter-spacing: -0.025em; color: #0A0A0A; line-height: 1.15;
+  }
+
   @media (max-width: 768px) {
     section > .container > div[style*="grid-template-columns:1fr 1fr"] {
       grid-template-columns: 1fr !important;
@@ -382,6 +544,7 @@ import Layout from '../layouts/Layout.astro';
     div[style*="grid-template-columns:repeat(2,1fr)"] {
       grid-template-columns: 1fr !important;
     }
+    .home-cs-grid { grid-template-columns: 1fr; }
     #hero-dashboard { display: none; }
   }
 </style>
