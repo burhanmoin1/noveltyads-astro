@@ -357,6 +357,25 @@ button {
     background: rgba(255, 255, 255, 0.06);
     color: rgba(255, 255, 255, 0.7);
 }
+/* Alternating light cards (2nd, 4th, 6th) */
+.svc-card:nth-child(even) {
+    background: #f0f0f0 !important;
+    color: #1a1a1a !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+}
+.svc-card:nth-child(even):hover {
+    border-color: rgba(0, 0, 0, 0.15) !important;
+}
+.svc-card:nth-child(even) .svc-card__icon {
+    background: rgba(0, 0, 0, 0.06);
+    color: #1a1a1a;
+}
+.svc-card:nth-child(even) .svc-card__desc {
+    opacity: 0.6;
+}
+.svc-card:nth-child(even) .svc-card__cta {
+    color: #1a1a1a;
+}
 .svc-card__title {
     font-size: 21px;
     font-weight: 700;
