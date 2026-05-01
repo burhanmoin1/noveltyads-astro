@@ -1185,4 +1185,8 @@ button {
     #process header {
         margin-bottom: 48px !important;
     }
+    .btn-lg {
+        padding: 12px 20px;
+        font-size: 13px;
+    }
 }
